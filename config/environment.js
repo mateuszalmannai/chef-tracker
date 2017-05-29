@@ -1,11 +1,19 @@
 /* eslint-env node */
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'chef-tracker',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    firebase: {
+      apiKey: "AIzaSyDEQTfGpL4lwcpii2CgtkjO20SbqDRj_yE",
+      authDomain: "chef-tracker-b440c.firebaseapp.com",
+      databaseURL: "https://chef-tracker-b440c.firebaseio.com",
+      projectId: "chef-tracker-b440c",
+      storageBucket: "chef-tracker-b440c.appspot.com",
+      messagingSenderId: "512981607894"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
