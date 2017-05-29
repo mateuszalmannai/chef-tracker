@@ -4,9 +4,11 @@ export default Ember.Controller.extend({
   actions: {
     enter(chef){
       Ember.set(chef, 'hereToday', true);
+      chef.save();
     },
     exit(chef){
       Ember.set(chef, 'hereToday', false);
+      chef.save();
     }
   }
 });
