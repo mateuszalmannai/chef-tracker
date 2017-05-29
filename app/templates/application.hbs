@@ -2,9 +2,9 @@
 <ul>
   {{#each chefs as |chef|}}
     {{#if chef.cookingToday}}
-      <li>{{chef.name}}</li>
+      <li class="cooking">{{chef.name}}</li>
     {{else}}
-      <li><s>{{chef.name}}</s></li>
+      <li class="not-cooking">{{chef.name}}</li>
     {{/if}}
   {{/each}}
 </ul>
