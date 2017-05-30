@@ -15,8 +15,7 @@ export default Ember.Controller.extend({
     saveNewItem(){
       this.store.createRecord('chef', {
         hereToday: false,
-        name: this.get('newItem'),
-        students: 0
+        name: this.get('newItem')
       }).save();
       this.set('newItem', '');
     },
