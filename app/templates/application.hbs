@@ -10,6 +10,7 @@
       <li class="not-cooking">
         {{chef.name}}
         <button {{action 'enter' chef}}>Enter</button>
+        <button {{action 'destroyItem' chef}}>Fire</button>
       </li>
     {{/if}}
   {{/each}}
