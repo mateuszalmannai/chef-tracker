@@ -3,6 +3,8 @@ import Ember from "ember";
 export default Ember.Controller.extend({
   totalChefCount: Ember.computed.alias('model.length'),
   availableChefs: Ember.computed.filterBy('model', 'hereToday'),
+  chefStudents: Ember.computed.mapBy('model', 'students'),
+  totalStudents: Ember.computed.sum('chefStudents'),
   actions: {
     enter(chef){
       Ember.set(chef, 'hereToday', true);
