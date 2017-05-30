@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Ember from "ember";
 
 export default Ember.Controller.extend({
   totalChefCount: Ember.computed.alias('model.length'),
@@ -23,8 +23,10 @@ export default Ember.Controller.extend({
       chef.destroyRecord();
     },
     decrementStudents(chef){
-      chef.decrementProperty('students');
-      chef.save();
+      if (chef.get('students') > 0) {
+        chef.decrementProperty('students');
+        chef.save();
+      }
     },
     incrementStudents(chef){
       // convenience method
