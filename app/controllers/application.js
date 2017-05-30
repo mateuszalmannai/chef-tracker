@@ -24,11 +24,12 @@ export default Ember.Controller.extend({
       chef.destroyRecord();
     },
     decrementStudents(chef){
-      Ember.set(chef, 'students', chef.get('students') - 1);
+      chef.decrementProperty('students');
       chef.save();
     },
     incrementStudents(chef){
-      Ember.set(chef, 'students', chef.get('students') + 1);
+      // convenience method
+      chef.incrementProperty('students');
       chef.save();
     }
   }
