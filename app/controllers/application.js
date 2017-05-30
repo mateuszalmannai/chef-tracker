@@ -15,12 +15,21 @@ export default Ember.Controller.extend({
     saveNewItem(){
       this.store.createRecord('chef', {
         hereToday: false,
-        name: this.get('newItem')
+        name: this.get('newItem'),
+        students: 0
       }).save();
       this.set('newItem', '');
     },
     destroyItem(chef){
       chef.destroyRecord();
+    },
+    decrementStudents(chef){
+      Ember.set(chef, 'students', chef.get('students') - 1);
+      chef.save();
+    },
+    incrementStudents(chef){
+      Ember.set(chef, 'students', chef.get('students') + 1);
+      chef.save();
     }
   }
 });
