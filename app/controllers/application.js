@@ -9,6 +9,13 @@ export default Ember.Controller.extend({
     exit(chef){
       Ember.set(chef, 'hereToday', false);
       chef.save();
+    },
+    saveNewItem(){
+      this.store.createRecord('chef', {
+        hereToday: false,
+        name: this.get('newItem')
+      }).save();
+      this.set('newItem', '');
     }
   }
 });
