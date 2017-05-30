@@ -5,6 +5,16 @@ export default Ember.Controller.extend({
   availableChefs: Ember.computed.filterBy('model', 'hereToday'),
   chefStudents: Ember.computed.mapBy('model', 'students'),
   totalStudents: Ember.computed.sum('chefStudents'),
+  /*
+  totalStudentsAlternative: Ember.computed('model.@each.students', function(){
+    let chefs = this.get('model');
+    let totalStudents = 0;
+    chefs.forEach((chef)=>{
+      totalStudents = totalStudents + chef.get('students');
+    });
+    return totalStudents;
+  });
+  */
   actions: {
     enter(chef){
       Ember.set(chef, 'hereToday', true);
