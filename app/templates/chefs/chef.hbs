@@ -1,3 +1,4 @@
 <h1>{{model.name}}</h1>
 <p>{{model.description}}</p>
+{{link-to 'Edit chef' 'chefs.chef.edit' model}}
 <button {{action 'destroyItem' model}}>Fire</button>
