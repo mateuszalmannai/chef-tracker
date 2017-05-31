@@ -13,7 +13,6 @@
           <li class="not-cooking">
             {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
             <button {{action 'enter' chef}}>Enter</button>
-            <button {{action 'destroyItem' chef}}>Fire</button>
           </li>
         {{/if}}
       {{/each}}
