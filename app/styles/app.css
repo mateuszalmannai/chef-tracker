@@ -1,1 +1,10 @@
 @import "chef-list.css";
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-item {
+  padding: 10px;
+}
