@@ -11,7 +11,7 @@
           </li>
         {{else}}
           <li class="not-cooking">
-            {{chef.name}}
+            {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
             <button {{action 'enter' chef}}>Enter</button>
             <button {{action 'destroyItem' chef}}>Fire</button>
           </li>
