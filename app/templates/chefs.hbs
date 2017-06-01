@@ -4,17 +4,7 @@
     <p>{{availableChefs.length}} of our {{totalChefCount}} chefs are cooking right now!</p>
     <ul>
       {{#each model as |chef|}}
-        {{#if chef.hereToday}}
-          <li class="cooking">
-            {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
-            <button {{action 'exit' chef}}>Exit</button>
-          </li>
-        {{else}}
-          <li class="not-cooking">
-            {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
-            <button {{action 'enter' chef}}>Enter</button>
-          </li>
-        {{/if}}
+        {{chef-item chef=chef}}
       {{/each}}
     </ul>
     <hr>
