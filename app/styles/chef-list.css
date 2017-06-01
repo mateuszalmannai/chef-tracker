@@ -25,3 +25,13 @@
 .chef-item .description {
   padding: 8px;
 }
+
+.img-icon {
+  max-width: 64px;
+  max-height: 64px;
+  padding: 5px;
+}
+
+.description {
+  min-height: 70px;
+}
