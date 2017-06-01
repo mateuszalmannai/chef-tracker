@@ -1,9 +1,10 @@
 <li class="{{if chef.hereToday '' 'not-cooking'}}">
-  {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
-  {{#if chef.hereToday}}
-    <button {{action 'exit' chef}}>Exit</button>
-  {{else}}
-    <button {{action 'enter' chef}}>Enter</button>
+  <div {{action 'toggleOpen'}}>{{chef.name}}{{if isOpen 'V' '>'}}</div>
+  {{#if isOpen}}
+    {{#link-to 'chefs.chef' chef.id}}<button>Show page</button>{{/link-to}}
+    <button {{action 'toggleAvailability' chef}}>
+      {{if chef.hereToday 'Exit' 'Enter'}}
+    </button>
   {{/if}}
 </li>
 

@@ -1,14 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  isOpen: false,
   actions: {
-    enter(chef){
-      Ember.set(chef, 'hereToday', true);
+    toggleAvailability(chef){
+      chef.toggleProperty('hereToday');
       chef.save();
     },
-    exit(chef){
-      Ember.set(chef, 'hereToday', false);
-      chef.save();
+    toggleOpen(){
+      this.toggleProperty('isOpen');
     }
   }
 });
