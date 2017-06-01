@@ -1,12 +1,9 @@
-{{#if chef.hereToday}}
-  <li class="cooking">
-    {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
+<li class="{{if chef.hereToday '' 'not-cooking'}}">
+  {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
+  {{#if chef.hereToday}}
     <button {{action 'exit' chef}}>Exit</button>
-  </li>
-{{else}}
-  <li class="not-cooking">
-    {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
+  {{else}}
     <button {{action 'enter' chef}}>Enter</button>
-  </li>
-{{/if}}
+  {{/if}}
+</li>
 
