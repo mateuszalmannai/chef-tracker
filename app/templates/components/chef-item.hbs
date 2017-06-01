@@ -1,7 +1,7 @@
-<div class="{{if chef.hereToday '' 'not-cooking'}}">
-  <div {{action 'toggleOpen'}}>{{chef.name}}{{if isOpen 'V' '>'}}</div>
+<div class="chef-item {{if chef.hereToday '' 'not-cooking'}}">
+  <div {{action 'toggleOpen'}}>{{chef.name}}<span class="pull-right">{{if isOpen 'V' '>'}}</span></div>
   {{#if isOpen}}
-    {{chef.description}}
+    <div class="description">{{chef.description}}</div>
     {{#link-to 'chefs.chef' chef.id}}<button>Show page</button>{{/link-to}}
     <button {{action 'toggleAvailability' chef}}>
       {{if chef.hereToday 'Exit' 'Enter'}}

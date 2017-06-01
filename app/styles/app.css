@@ -13,3 +13,7 @@
   height: 50px;
   width: 300px;
 }
+
+.pull-right {
+  float: right;
+}
