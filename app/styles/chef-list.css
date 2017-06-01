@@ -1,11 +1,11 @@
-li.cooking {
+.cooking {
   text-decoration: underline;
 }
 
-li.not-cooking {
+.not-cooking {
   color: #BBB;
 }
 
-li.not-cooking a {
+.not-cooking a {
   color: #BBB;
 }
