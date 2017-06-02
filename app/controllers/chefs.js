@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Ember from "ember";
 
 export default Ember.Controller.extend({
   totalChefCount: Ember.computed.alias('model.length'),
@@ -10,6 +10,10 @@ export default Ember.Controller.extend({
         name: this.get('newItem')
       }).save();
       this.set('newItem', '');
+    },
+    toggleAvailability(chef){
+      chef.toggleProperty('hereToday');
+      chef.save();
     }
   }
 });
