@@ -1,8 +1,9 @@
 <p>Name: {{input value=model.name}}</p>
 <p>Description: {{textarea value=model.description class="medium-text-area"}}</p>
 <p>Image URL: {{input value=model.imageUrl}}</p>
-<img src={{model.imageUrl}} class="img-icon"/>
-<br>
+
+{{icon-image model.imageUrl}}<br>
+
 <p>{{input type="checkbox" checked=model.hasCulinaryDegree}} Has Culinary Degree?</p>
 
 {{#if model.hasCulinaryDegree}}
