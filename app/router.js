@@ -15,6 +15,7 @@ Router.map(function () {
   this.route('contact');
   this.route('restaurants', function () {
     this.route('restaurant', {path: ':restaurant_id'});
+    this.route('restaurant.edit', {path: ':restaurant_id/edit'});
   });
 });
 
