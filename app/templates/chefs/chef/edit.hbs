@@ -1,12 +1,22 @@
-<p>Name: {{input value=model.name}}</p>
-<p>Description: {{textarea value=model.description class="medium-text-area"}}</p>
-<p>Image URL: {{input value=model.imageUrl}}</p>
+<p>Name: {{input value=model.chef.name}}</p>
+<p>Description: {{textarea value=model.chef.description class="medium-text-area"}}</p>
+<p>Image URL: {{input value=model.chef.imageUrl}}</p>
 
-{{icon-image model.imageUrl}}<br>
+{{icon-image model.chef.imageUrl}}<br>
 
-<p>{{input type="checkbox" checked=model.hasCulinaryDegree}} Has Culinary Degree?</p>
+<p>{{input type="checkbox" checked=model.chef.hasCulinaryDegree}} Has Culinary Degree?</p>
 
-{{#if model.hasCulinaryDegree}}
-  <p>Culinary School Attended: {{input value=model.schoolAttended}}</p>
+{{#if model.chef.hasCulinaryDegree}}
+  <p>Culinary School Attended: {{input value=model.chef.schoolAttended}}</p>
 {{/if}}
+<br>
+{{#x-select value=model.chef.restaurant.content action="selectRestaurant" as |xs|}}
+  {{#each model.restaurants as |restaurant|}}
+    {{#xs.option value=restaurant}}
+      {{restaurant.name}}
+    {{/xs.option}}
+  {{/each}}
+{{/x-select}}
+<br>
+<hr>
 <button {{action 'save'}}>Save</button>
