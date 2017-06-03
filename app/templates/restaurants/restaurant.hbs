@@ -2,7 +2,13 @@
 <p>This fine establishment is staffed by the following fine chef(s):</p>
 <ul>
   {{#each model.chefs as |chef|}}
-    <li>{{chef.name}}</li>
+    <li>
+      {{#link-to 'chefs.chef' chef.id}}
+        {{chef.name}}
+      {{/link-to}}
+    </li>
   {{/each}}
 </ul>
-{{#link-to 'restaurants.restaurant.edit' model.id}}<button>Edit</button>{{/link-to}}
+{{#link-to 'restaurants.restaurant.edit' model.id}}
+  <button>Edit</button>
+{{/link-to}}
