@@ -6,5 +6,6 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   hasCulinaryDegree: DS.attr('boolean'),
   schoolAttended: DS.attr('string'),
-  imageUrl: DS.attr('string')
+  imageUrl: DS.attr('string'),
+  restaurant: DS.belongsTo()
 });
