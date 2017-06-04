@@ -10,6 +10,7 @@
   <p>Culinary School Attended: {{input value=model.chef.schoolAttended}}</p>
 {{/if}}
 <br>
+Works for:
 {{#x-select value=model.chef.restaurant.content action="selectRestaurant" as |xs|}}
   {{#each model.restaurants as |restaurant|}}
     {{#xs.option value=restaurant}}
